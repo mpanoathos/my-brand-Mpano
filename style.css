@@ -242,3 +242,41 @@ form textarea{
 margin-top:20px;
 margin-left:20px;
 }
+.subscription{
+    position: absolute;
+    left: 550px;
+    text-align: center;
+    color: #000000; 
+}
+.subscription input{
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+.subscription button{
+    padding: 10px;
+    border: none;
+    background-color:#757069;
+    color: beige;
+    border-radius: 10px;
+}
+.subscription button:hover{
+    transform: scale(1.05);
+}
+.call-num{
+    color: #000000;
+    font-weight: 800;
+    position: relative;
+    bottom:40px;
+    left: 130px;
+}
+.call-num img{
+    height: 30px;
+    width:30px;
+    position: relative;
+    top:12px
+}
+.copy{
+    color: #000000;
+    position: relative;
+}
