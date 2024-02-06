@@ -6,7 +6,6 @@
 body {
     color: #333;
     line-height: 1.6;
-    /* background-color:beige; */
     overflow-x: hidden;
     }
 nav{
@@ -28,9 +27,9 @@ nav a{
     display: none;
 }
 .line1,.line2,.line3{
-    border: 1px solid #333;
+    border: 3px solid #333;
     width: 20px;
-    margin-top: 5px;
+    margin-top: 8px;
     margin-left: 20px;
 }
 #home{
@@ -308,4 +307,92 @@ margin-left:20px;
 #login p{
     color: red;
     display: none;
+}
+@media only screen and (max-width:767px) {
+    body{
+    overflow-x: hidden;
+    }
+    #hamburger-menu{
+        display: block;
+        margin-top: 10px;
+        z-index: 100;
+    }
+    nav{
+        display:none;
+        flex-direction: column;
+        width: 40%;
+    }
+    .home-images{
+        margin-top: 20px;
+        margin-left:40px;
+    }
+    .home-images img{
+        height: 350px;
+        left: 60px;
+        top:130px;
+    }
+    .home-presentation{
+        position: absolute;
+        top:510px;
+        left:30px;;  
+    }  
+    #home button{
+        position: absolute;
+        right:160px;
+        top:760px;
+        padding:15px;
+        background-color: #757069;
+        border: none;
+        border-radius: 20px;
+        color:beige;
+        cursor: pointer;
+        font-weight:bolder;
+        text-align: center;
+    } 
+    .presentation-links{
+        display: flex;
+        margin-top:30px;
+        position: relative;
+        left:70px
+    }
+    #about{
+        margin-top: 360px;
+    }
+    .skills{
+        display: block;
+    }
+    .skills .skill{
+        width: 100px;
+        height: 100px;
+        background-color:#BED2DD;
+        margin-left:50px;
+        margin-top:20px;
+        padding: 40px;
+    }
+    .exp1,.exp2{
+        height: 80px;
+        width: 200px;;
+        padding:30px;
+        margin-left: 20px;
+        top:20px;
+        right:50px;
+    }
+    #blog button{
+        position: absolute;
+        left: 20px;
+
+    }
+    #blog a img{
+        height: 250px;
+        width: 250px;
+    }
+    .blog1,.blog2{
+        position: relative;
+        right: 150px;
+        top:30px;
+    }
+    .blog-content{
+        text-align: center;
+        padding: 5px;
+    }
 }
