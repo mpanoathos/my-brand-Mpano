@@ -244,7 +244,7 @@ margin-left:20px;
 }
 .subscription{
     position: absolute;
-    left: 550px;
+    left: 590px;
     text-align: center;
     color: #000000; 
 }
@@ -252,6 +252,8 @@ margin-left:20px;
     padding: 10px;
     outline: none;
     border: none;
+    width: 150px;
+    border-radius: 10px;
 }
 .subscription button{
     padding: 10px;
@@ -259,6 +261,8 @@ margin-left:20px;
     background-color:#757069;
     color: beige;
     border-radius: 10px;
+    position: absolute;
+    right:-1px;
 }
 .subscription button:hover{
     transform: scale(1.05);
@@ -268,7 +272,7 @@ margin-left:20px;
     font-weight: 800;
     position: relative;
     bottom:40px;
-    left: 130px;
+    left: 170px;
 }
 .call-num img{
     height: 30px;
@@ -279,4 +283,29 @@ margin-left:20px;
 .copy{
     color: #000000;
     position: relative;
+}
+#login{
+    display: none;
+    border: 1px solid #BED2DD;
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    left:500px;
+    top:100px;
+}
+#login form{
+    padding: 10px;
+}
+#login button{
+    padding:10px;
+    border: none;
+    background-color: #757069;
+    font-weight: 600;
+    color: beige;
+    border-radius: 10px;
+    display: inline-flex;
+}
+#login p{
+    color: red;
+    display: none;
 }
