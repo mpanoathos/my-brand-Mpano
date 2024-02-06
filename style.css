@@ -323,21 +323,21 @@ margin-left:20px;
     }
     .home-images {
         margin-top: 20px;
-        margin-left:50px;
+        margin-left:80px;
     }
     .home-images img{
         height: 350px;
-        left: 70px;
+        left: 100px;
         top:130px;
     }
     .home-presentation{
         position: absolute;
         top:510px;
-        left:10px; 
+        left:40px; 
     }  
     #home button{
         position: absolute;
-        right:140px;
+        right:120px;
         top:760px;
         padding:15px;
         background-color: #757069;
@@ -352,7 +352,7 @@ margin-left:20px;
         display: flex;
         margin-top:30px;
         position: relative;
-        left:100px;
+        left:110px;
         width:200px;
     }
     #about{
@@ -368,7 +368,7 @@ margin-left:20px;
         width: 100px;
         height: 100px;
         background-color:#BED2DD;
-        margin-left:50px;
+        margin-left:70px;
         margin-top:20px;
         padding: 40px;
     }
@@ -376,14 +376,14 @@ margin-left:20px;
         height: 80px;
         width: 200px;;
         padding:30px;
-        margin-left: 60px;
+        margin-left: 80px;
         top:20px;
         right:50px;
     }
     #blog button{
         width: 130px;
         position: absolute;
-        left: 250px;
+        left: 270px;
     }
     #blog a img{
         height: 250px;
@@ -401,7 +401,7 @@ margin-left:20px;
     #footer{
     background-color:#85630d;
     height: 150px;
-    width: 100%;
+    width: 478px;
     color: beige;
 }
 #footer iframe{
