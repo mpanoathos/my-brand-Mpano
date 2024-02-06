@@ -310,7 +310,7 @@ margin-left:20px;
 }
 @media only screen and (max-width:767px) {
     body{
-    overflow-x: hidden;
+        overflow-x: hidden;
     }
     #hamburger-menu{
         display: block;
@@ -320,25 +320,25 @@ margin-left:20px;
     nav{
         display:none;
         flex-direction: column;
-        width: 40%;
+        width: 60%;
     }
-    .home-images{
+    .home-images {
         margin-top: 20px;
-        margin-left:40px;
+        margin-left:50px;
     }
     .home-images img{
         height: 350px;
-        left: 60px;
+        left: 70px;
         top:130px;
     }
     .home-presentation{
         position: absolute;
         top:510px;
-        left:30px;;  
+        left:10px; 
     }  
     #home button{
         position: absolute;
-        right:160px;
+        right:140px;
         top:760px;
         padding:15px;
         background-color: #757069;
@@ -353,10 +353,14 @@ margin-left:20px;
         display: flex;
         margin-top:30px;
         position: relative;
-        left:70px
+        left:100px;
+        width:200px;
     }
     #about{
-        margin-top: 360px;
+        margin-top: 450px;
+    }
+    #about h2{
+        text-align: center;
     }
     .skills{
         display: block;
@@ -373,14 +377,14 @@ margin-left:20px;
         height: 80px;
         width: 200px;;
         padding:30px;
-        margin-left: 20px;
+        margin-left: 60px;
         top:20px;
         right:50px;
     }
     #blog button{
+        width: 130px;
         position: absolute;
-        left: 20px;
-
+        left: 250px;
     }
     #blog a img{
         height: 250px;
@@ -395,4 +399,57 @@ margin-left:20px;
         text-align: center;
         padding: 5px;
     }
+    #footer{
+    background-color:#85630d;
+    height: 150px;
+    width: 100%;
+    color: beige;
+}
+#footer iframe{
+    width: 200px;
+    height: 100px;
+}
+.subscription{
+    position: absolute;
+    left: 590px;
+    text-align: center;
+    color: #000000;
+}
+.subscription input{
+    padding: 10px;
+    outline: none;
+    border: none;
+    width: 150px;
+    border-radius: 10px;
+}
+.subscription button{
+    padding: 10px;
+    border: none;
+    background-color:#757069;
+    color: beige;
+    border-radius: 10px;
+    position: absolute;
+    right:-1px;
+}
+.subscription button:hover{
+    transform: scale(1.05);
+}
+.call-num{
+    color: #000000;
+    font-weight: 800;
+    position: relative;
+    bottom:40px;
+    left: 170px;
+}
+.call-num img{
+    height: 30px;
+    width:30px;
+    position: relative;
+    top:12px
+}
+.copy{
+    color: #000000;
+    position: relative;
+}
+
 }
