@@ -480,19 +480,21 @@ margin-left:20px;
         left:490px;
     }
     #home button{
-        right:190px;
+        right:450px;
         top:380px;
     }
     .exp1,.exp2{
-        margin-left: 250px;
+        margin-left: 420px;
     }
     .my-work a img{
-        margin-left:360px
+        height: 200px;
+        width: 250px;
+        margin:40px 80px;
     }
     .blogs{
         margin-left: 180px;
     }
     .blog1,.blog2{
-        margin-left: 50px;
+        margin-left: 80px;
     }
 }
