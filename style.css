@@ -471,28 +471,29 @@ margin-left:20px;
     display: none;
 }
 }
-@media only screen and (min-width:1024px){
+@media only screen and (min-width:1024px) and (max-width:1300px){
     .home-images img{
         left: 200px;
         top:130px;
     }
     .home-presentation{
         top:210px;
-        left:490px;
+        left:500px;
     }
     #home button{
-        right:450px;
+        right:200px;
         top:380px;
     }
     .exp1,.exp2{
-        margin-left: 420px;
+        margin-left: 300px;
     }
     .my-work a img{
         height: 200px;
         width: 250px;
-        margin:40px 80px;
+        margin:40px 350px;
      }
     .blog1,.blog2{
         margin-top:30px;
-        margin-left: 230px;
+        margin-left: 150px;
     }}
+    
