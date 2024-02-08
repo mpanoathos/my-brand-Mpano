@@ -6,17 +6,19 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
-    background-color: beige;
+    background-color: white;
     }
 nav{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
     background-color: beige;
-    width: 100%;
-    z-index: 100;
+    height: 630px;
+    z-index: 100; 
+    width:200px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: rgb(253, 197, 94);
 }
 nav a{
     text-decoration: none;
@@ -26,35 +28,132 @@ nav a{
 #hamburger-menu{
     display: none;
 }
-.line1,.line2,.line3{
-    border: 3px solid #333;
-    width: 20px;
-    margin-top: 8px;
-    margin-left: 20px;
-}
-#blog-navigation{
+#profile{
+    width: 83%;
+    height: 80px;
     position: absolute;
-    top:200px;
-    left:200px;
-    border: 1px solid rgb(255, 187, 59);
-    padding: 50px;
-    border-radius: 20px;
-}
-#blog-navigation h3{
-    font-weight: 500;
-    font-size: 20px;
-    text-align: center;
-}
-#blog-navigation button{
-    padding: 20px;
-    margin-left: 30px;
-    border: none;
-    background-color: rgb(255, 187, 59);
+    left: 210px;
+    top:10px;
     border-radius: 10px;
+    background-color:  beige;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-.nav0,.nav1{
-    margin-top:20px
+#profile img{
+    height: 30px;
+    width: 30px;
+    margin-top:30px;
+    margin-left: 10px;
 }
-#comments{
-    border: 1px solid rgb(255, 187, 59);
+#profile h4{
+    position: relative;
+    left: 50px;
+    bottom:30px;
 }
+#profile h1{
+    text-align: center;
+    position: relative;
+    bottom: 70px;
+}
+#blogs{
+    position: absolute;
+    top:110px;
+    left:300px
+}
+#blogs a img{
+    height: 250px;
+    width: 250px;
+}
+.blog1,.blog2,.blog3{
+    height: 380px;
+    width: 250px;
+    background-color: #BED2DD;
+    display:inline-block;
+    flex-direction: row;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px
+}
+.blog2,.blog3{
+margin-left:20px;
+}
+.blog1 img,.blog2 img,.blog3 img{
+    height: 15px;
+    width: 15px;
+}
+.blog-content{
+    text-align: center;
+    padding: 5px;
+}
+#create{
+    width: 83%;
+    height: 80px;
+    position: absolute;
+    left: 210px;
+    top:540px;
+    border-radius: 10px;
+    background-color: beige;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+} 
+#create h3{
+    margin-bottom: 10px;
+    margin-left:20px;
+}
+ #create a{
+    text-decoration: none;
+    color:#333;
+    background-color: rgb(253, 197, 94);
+    padding:13px 20px;
+    position: relative;
+    left: 20px;
+    border-radius: 10px;
+ }
+ #create h4{
+    position: relative;
+    left:400px;
+    bottom:60px
+ }
+ @media only screen and (max-width:599px){
+    /* nav{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: beige;
+    height: 330px;
+    z-index: 100;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: rgb(253, 197, 94);   
+    }
+    #hamburger-menu{
+        display: flex;
+        z-index: 300;
+    }
+    #profile{
+        width: 700px;
+        height: 80px;
+        position: absolute;
+        left: 150px;
+        top:10px;
+    }
+    .blog1,.blog2,.blog3{
+        height: 480px;
+        width: 350px;
+        background-color: #BED2DD;
+        display:inline-block;
+        flex-direction: row;
+        box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px
+    }
+    #create{
+        width: 700px;
+        height: 80px;
+        position: absolute;
+        left: 180px;
+        top:1400px;
+        border-radius: 10px;
+        background-color: beige;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    
+    }  */
+ }
+ 

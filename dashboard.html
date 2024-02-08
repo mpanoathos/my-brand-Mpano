@@ -10,28 +10,67 @@
 <body>
     <nav>
         <a href="index.html"><B><img src="./images/letter-a.png" width="50px" height="50px"></B></a>
-        <a href="#index.html">HOME</a>
-        <a href="index.html">ABOUT</a>
-        <a href="index.html">PORTFOLIO</a>
-        <a href="index.html">BLOG</a>
-        <a href="index.html">CONTACT ME</a>
+        <a href="#profile">PROFILE</a>
+        <a href="#blogs">VIEW BLOGS</a>
+        <a href="#create">CREATE BLOGS</a>
+        <a href="comments.html" target="_blank">COMMENTS</a>
+        <a href="index.html#contact-me">CONTACT ME</a>
         <a href="login.html"><b>LOGIN</b></a> 
     </nav>
     <div id="hamburger-menu">
     <div class="line1"></div>
     <div class="line2"></div>
     <div class="line3"></div>
-</div>
-<div id="blog-navigation">
-    <div class="nav0">
-    <h3>Create new blog</h3>
-    <button>Create</button>
-</div>
-    <div class="nav1">
-    <h3>Goto Blogs</h3>
-    <button>Blogs</button>
-</div>
-    <div id="comments">
     </div>
+    <section id="profile">
+        <img src="./images/user.png" alt="profile">
+        <h4>Admin</h4>
+        <h1>Dashboard</h1>
+    </section>
+    <section id="blogs">
+        <div class="blog1">
+        <a href="https://athosblogs1.blogspot.com/" target="_blank"><img src="./images/SE.png" alt="Software Engineering">
+        </a>
+        <div class="blog-content">
+            <h3>Software Engineering Practices</h3>
+            <p>In the fast-paced world of technology,....</p>
+        </div>
+        <div class="comment-like">
+    <img src="./images/comment.png" alt="comment">5
+    <img src="./images/like.png" alt="Likes">9
+</div>
+    </div>
+    <div class="blog2">
+        <a href="https://athosblogs2.blogspot.com/" target="_blank"><img src="./images/TS.jpg" alt="Technical support">
+    </a>
+    <div class="blog-content">
+        <h3>Technical Support Fundamentals</h3>
+        <p>Technical support is a crucial aspect of ensuring that...</p>
+    </div>
+    <div class="comment-like">
+    <img src="./images/comment.png" alt="comment">5
+    <img src="./images/like.png" alt="Likes">4
+    </div>
+    </div>
+    <div class="blog3">
+        <a href="#"><img src="./images/comp-science.webp" alt="Computer Science"></a>
+        <div class="blog-content">
+            <h3>World of Computer Science</h3>
+            <p>Welcome to the exciting and ever-evolving world of computer science! ....</p>
+        </div>
+        <div class="comment-like">
+    <img src="./images/comment.png" alt="comment">5
+    <img src="./images/like.png" alt="Likes">2
+    </div>
+    </div>
+    </section>
+    <section id="create">
+        <div class="content">
+    <h3>Create new blog</h3>
+        <a href="create-blog.html" target="_blank">Create</a>
+    </div>
+<h4>Comments:15</h4>
+<h4>Likes:15</h4>
+    </section>
 </body>
 </html>
