@@ -163,7 +163,7 @@ nav a{
 #blog h2{
     text-align: center;
 }
-#blog button{
+#blog .dashboard{
     position: absolute;
     right: 50px;
     padding: 20px;
@@ -171,6 +171,8 @@ nav a{
     background-color: rgb(255, 187, 59);
     border-radius: 10px;
     box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #333;
 }
 #blog a img{
     height: 250px;
@@ -357,10 +359,10 @@ margin-left:20px;
         top:20px;
         right:50px;
     }
-    #blog button{
-        width: 130px;
+    #blog .dashboard{
+        width: 80px;
         position: absolute;
-        left: 270px;
+        left: 330px;
     }
     #blog a img{
         height: 250px;

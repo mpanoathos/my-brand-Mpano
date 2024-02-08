@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: beige;
+    }
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background-color: beige;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+nav a{
+    text-decoration: none;
+    padding: 8px 12px;
+    color: #333;
+}
+#hamburger-menu{
+    display: none;
+}
+.line1,.line2,.line3{
+    border: 3px solid #333;
+    width: 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+#blog-navigation{
+    position: absolute;
+    top:200px;
+    left:200px;
+    border: 1px solid rgb(255, 187, 59);
+    padding: 50px;
+    border-radius: 20px;
+}
+#blog-navigation h3{
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+#blog-navigation button{
+    padding: 20px;
+    margin-left: 30px;
+    border: none;
+    background-color: rgb(255, 187, 59);
+    border-radius: 10px;
+}
+.nav0,.nav1{
+    margin-top:20px
+}
+#comments{
+    border: 1px solid rgb(255, 187, 59);
+}
