@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: beige;
+    }
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background-color: beige;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+nav a{
+    text-decoration: none;
+    padding: 8px 12px;
+    color: #333;
+}
+
+#hamburger-menu{
+    display: none;
+}
+.line1,.line2,.line3{
+    border: 3px solid #333;
+    width: 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+.wrapper{
+    padding: 50px;
+    position: absolute;
+    left:500px;
+    top:150px;
+    background-color:rgb(255, 187, 59);
+    border-radius: 10px;
+    box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.1);
+}
+.wrapper h1{
+    text-align: center;
+}
+.input-box input{
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 40px;
+    background-color:transparent;
+    outline: none;
+    border: 1px solid #333;
+    width: 100%;
+}
+.remember-forgot label{
+    margin-right: 30px;
+}
+.remember-forgot a{
+    text-decoration: none;
+    color: #333;
+    margin-top:20px;
+}
+button{
+    padding:10px;
+    border: none;
+    background-color: #757069;
+    width: 100%;
+    font-weight: 600;
+    color: beige;
+    border-radius: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.register-link a{
+    text-decoration: none;
+    margin-left: 30px;
+    color: #333;
+    margin-top:10px;
+}
+.wrapper:hover{
+    transform: scale(1.01);
+}
+button:hover{
+    transform: scale(1.01);
+}
+@media only screen and (max-width:599px) {
+    body{
+        overflow-x: hidden;
+    }
+    #hamburger-menu{
+        display: block;
+        margin-top: 10px;
+        z-index: 100;
+    }
+    nav{
+        display:none;
+        flex-direction: column;
+        width: 60%;
+    }
+    .wrapper{
+        position: absolute;
+        left:40px;
+        top:150px;
+        padding: 30px;
+    }
+    .input-box input{
+        padding: 5px;
+    }
+}
+@media screen and (min-width:600px) and (max-width:1023px) {
+    .wrapper{
+        position: absolute;
+        left:100px;
+        top:150px;
+    }
+}

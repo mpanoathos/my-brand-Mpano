@@ -13,9 +13,9 @@ nav{
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    background-color: white;
+    background-color: rgb(244, 244, 214);
     width: 100%;
-    z-index: 100;
+    z-index: 400;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 nav a{
@@ -283,31 +283,6 @@ margin-left:20px;
 .copy{
     color: #000000;
     position: relative;
-}
-#login{
-    display: none;
-    border: 1px solid #BED2DD;
-    width: 300px;
-    height: 250px;
-    position: absolute;
-    left:500px;
-    top:100px;
-}
-#login form{
-    padding: 10px;
-}
-#login button{
-    padding:10px;
-    border: none;
-    background-color: #757069;
-    font-weight: 600;
-    color: beige;
-    border-radius: 10px;
-    display: inline-flex;
-}
-#login p{
-    color: red;
-    display: none;
 }
 @media only screen and (max-width:599px) {
     body{
