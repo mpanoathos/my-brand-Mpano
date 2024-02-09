@@ -264,7 +264,7 @@ form{
     padding:20px;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10px;
    }
 form input{
     padding: 10px;
@@ -289,7 +289,7 @@ margin-left:20px;
 }
 .subscription{
     position: absolute;
-    left: 590px;
+    left: 830px;
     text-align: center;
     color: #000000; 
 }
@@ -297,7 +297,7 @@ margin-left:20px;
     padding: 10px;
     outline: none;
     border: none;
-    width: 150px;
+    width: 350px;
     border-radius: 10px;
 }
 .subscription button{
@@ -317,7 +317,7 @@ margin-left:20px;
     font-weight: 800;
     position: relative;
     bottom:40px;
-    left: 170px;
+    left: 200px;
 }
 .call-num img{
     height: 30px;
