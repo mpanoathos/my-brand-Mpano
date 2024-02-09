@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Nunito';
 }
 body {
     color: #333;
@@ -154,14 +157,54 @@ nav a{
 #portfolio h2{
     text-align: center;
     margin-top:30px;
+    margin-bottom: 20px;
 }
-.my-work a img{
-    height: 200px;
-    width: 250px;
-    margin:40px 80px;
+.my-work {
+    display: flex;
+    align-items: center;
+    gap:4rem;
+    margin-left: 130px;
+}
+.my-work .work-box{
+    position: relative;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.work-box:hover{
+    transform: scale(1.01);
+}
+.work-box .my-work-layer{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1),#246689);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    opacity: 0;
+    transition: .5 ease;
+}
+.my-work-layer h3{
+    font-size: 1.5rem;
+    color:white;
+}
+.work-box:hover .my-work-layer{
+    opacity: 1;
+}
+.work-box a img{
+    width: 300px;
+    height: 100%;
+    transition: .5s ease;
 }
 #blog h2{
     text-align: center;
+    margin-top:50px;
 }
 #blog .dashboard{
     position: absolute;
@@ -362,7 +405,7 @@ margin-left:20px;
     #blog .dashboard{
         width: 100px;
         position: absolute;
-        left: 30px;
+        left: 330px;
     }
     #blog a img{
         height: 250px;

@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Nunito';
 }
 body {
     color: #333;
@@ -27,6 +29,12 @@ nav a{
 }
 #hamburger-menu{
     display: none;
+}
+.line1,.line2,.line3{
+    border: 3px solid #333;
+    width: 20px;
+    margin-top: 8px;
+    margin-left: 20px;
 }
 #profile{
     width: 83%;
@@ -112,5 +120,69 @@ margin-left:20px;
     left:400px;
     bottom:60px
  }
- 
+ @media only screen and (max-width:599px){
+    nav{
+        display: none;
+    }
+    #hamburger-menu{
+        display: block;
+        margin-top: 10px;
+        z-index: 100;
+    }
+    #profile{
+    width: 1100px;
+    height: 90px;
+    left: 130px;
+    top:10px;
+    }
+    #profile h1{
+        bottom: 140px;
+        font-size: 50px;
+    }
+    #profile img{
+        height: 50px;
+        width: 50px;
+    }
+    #profile h4{
+        left: 60px;
+        bottom:40px;
+        font-size: 30px;
+    }
+    .blog1,.blog2,.blog3{
+        height: 750px;
+        width: 550px;
+        margin-top: 120px;
+    }
+    .blog2,.blog3{
+        height:750px;
+    }
+    #blogs a img{
+        height: 680px;
+        width: 550px;
+    }
+    #create{
+        width: 1100px;
+        left: 130px;
+        top:100px;
+    }
+    #blogs{
+        position: absolute;
+        top:110px;
+        left:450px
+    }
+ }
+ @media only screen and (min-width:600px) and (max-width:1023px) {
+    nav{
+        display: none;
+    }
+    #hamburger-menu{
+        display: block;
+        z-index: 100;
+    }
+    #create{
+        left: 210px;
+        top:1350px;
+    
+    }
+ }
  
