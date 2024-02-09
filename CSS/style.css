@@ -402,6 +402,19 @@ margin-left:20px;
         top:20px;
         right:50px;
     }
+    .my-work {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .work-box {
+        margin-bottom: 30px;
+    }
+
+    .work-box a img {
+        width: 100%; 
+    }
     #blog .dashboard{
         width: 100px;
         position: absolute;
