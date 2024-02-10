@@ -29,7 +29,7 @@ nav a{
 #hamburger-menu{
     display: none;
 }
-.line1,.line2,.line3{
+.line{
     border: 3px solid #333;
     width: 20px;
     margin-top: 8px;
@@ -297,7 +297,7 @@ margin-left:20px;
     padding: 10px;
     outline: none;
     border: none;
-    width: 350px;
+    width: 300px;
     border-radius: 10px;
 }
 .subscription button{
@@ -317,7 +317,7 @@ margin-left:20px;
     font-weight: 800;
     position: relative;
     bottom:40px;
-    left: 200px;
+    left: 470px;
 }
 .call-num img{
     height: 30px;
@@ -328,6 +328,7 @@ margin-left:20px;
 .copy{
     color: #000000;
     position: relative;
+    left:200px
 }
 @media only screen and (max-width:599px) {
     body{
@@ -336,10 +337,18 @@ margin-left:20px;
     #hamburger-menu{
         display: block;
         margin-top: 10px;
-        z-index: 100;
     }
+    /* #hamburger-menu.active .line:nth-child(2){
+        opacity: 0;
+    }
+    #hamburger-menu.active .line:nth-child(1){
+        transform: translateY(25px) rotate(45deg);
+    }
+    #hamburger-menu.active .line:nth-child(3){
+        transform: translateY(-25px) rotate(-45deg);
+    } */
     nav{
-        display:none;
+        transform: translateX(-100%);
         flex-direction: column;
         width: 60%;
     }
