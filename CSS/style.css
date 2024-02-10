@@ -194,10 +194,14 @@ nav a{
     font-size: 1.5rem;
     color:white;
 }
+.my-work-layer a img{
+    height: 40px;
+    width: 40px;
+}
 .work-box:hover .my-work-layer{
     opacity: 1;
 }
-.work-box a img{
+.work-box img{
     width: 300px;
     height: 100%;
     transition: .5s ease;
