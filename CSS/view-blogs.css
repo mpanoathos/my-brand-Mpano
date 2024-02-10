@@ -68,10 +68,17 @@ header{
     width: 200px;
     height: 50px;
 }
+.leave-comment button{
+    padding: 10px;
+    position: relative;
+    left:280px;
+    background-color: rgb(253, 197, 94);
+    border: none;
+}
 @media only screen and(max-width:600px){
     #blogs{
         position: absolute;
-        right: 20px;
+        right:50px;
     }
 
 }

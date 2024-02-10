@@ -338,15 +338,6 @@ margin-left:20px;
         display: block;
         margin-top: 10px;
     }
-    /* #hamburger-menu.active .line:nth-child(2){
-        opacity: 0;
-    }
-    #hamburger-menu.active .line:nth-child(1){
-        transform: translateY(25px) rotate(45deg);
-    }
-    #hamburger-menu.active .line:nth-child(3){
-        transform: translateY(-25px) rotate(-45deg);
-    } */
     nav{
         transform: translateX(-100%);
         flex-direction: column;
@@ -459,10 +450,11 @@ margin-left:20px;
 }
 .subscription input{
     position: relative;
-    right:30px;
+    right:10px;
+    width:200px;
 }
 .subscription button{
-    right:60px;
+    right:-1px;
 }
 .call-num{
     color: #000000;
@@ -500,8 +492,7 @@ margin-left:20px;
         position: relative;
         left:50px
     }
-    
-.exp1,.exp2{
+    .exp1,.exp2{
     margin-left: 160px;
 }
 .my-work a img{
