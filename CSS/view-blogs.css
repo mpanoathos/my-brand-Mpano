@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+}
+body {
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: beige;
+    }
+nav{
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: beige;
+    height: 100%;
+    z-index: 100; 
+    width:200px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: rgb(253, 197, 94);
+}
+nav a{
+    text-decoration: none;
+    padding: 8px 12px;
+    color: #333;
+}
+#hamburger-menu{
+    display: block;
+}
+.line1,.line2,.line3{
+    border: 3px solid #333;
+    width: 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+#blogs{
+    position: absolute;
+    left:250px;
+    top:10px
+}
+.blog1,.blog2,.blog3{
+    border: 1px solid rgb(253, 197, 94);
+    width: 900px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.blog2,.blog3{
+    margin-top: 20px;
+}
+.read-more{
+    display: block;
+    position: relative;
+    left:800px;
+    padding: 10px;
+    background-color:rgb(253, 197, 94);
+    border: none;
+}
+header{
+    text-align: center;
+    font-weight: 800;
+}
+.blogs-paragraph{
+    display: none;
+}
+.leave-comment textarea{
+    outline: none;
+    width: 200px;
+    height: 50px;
+}
