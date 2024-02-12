@@ -499,8 +499,11 @@ margin-left:20px;
     .exp1,.exp2{
     margin-left: 160px;
 }
-.my-work a img{
-    margin-left:280px
+.my-work{
+    margin: 20px;
+}
+.work-box img{
+    width: 100%;
 }
 .blog1,.blog2{
     margin-left: 280px;
@@ -525,13 +528,16 @@ margin-left:20px;
     .exp1,.exp2{
         margin-left: 300px;
     }
-    .my-work a img{
-        height: 200px;
-        width: 250px;
-        margin:40px 350px;
-     }
+    .work-box img{
+        width: 100%;
+        height: 100%;
+    }
     .blog1,.blog2{
         margin-top:30px;
         margin-left: 150px;
-    }}
+    }
+    .subscription{
+        left: 330px;
+    }
+}
     
