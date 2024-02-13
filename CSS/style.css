@@ -338,15 +338,33 @@ margin-left:20px;
     body{
         overflow-x: hidden;
     }
-    #hamburger-menu{
-        display: block;
-        margin-top: 10px;
-    }
     nav{
         transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
         flex-direction: column;
         width: 60%;
     }
+    nav.show-navbar {
+        transform: translateX(0);
+    }
+    #hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+    #hamburger-menu.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    #hamburger-menu.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #hamburger-menu.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    #hamburger-menu .line {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }    
     .home-images {
         margin-top: 20px;
         margin-left:80px;

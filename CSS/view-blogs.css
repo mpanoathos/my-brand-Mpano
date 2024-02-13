@@ -77,8 +77,12 @@ header{
 }
 @media only screen and (max-width:599px){
     nav{
-        display: none;
+        transform: translateX(100%);
     }
+    nav.showbar{
+        transform: translateX(0);
+    }
+    
     #hamburger-menu{
         display: block;
     }
