@@ -82,6 +82,11 @@ header{
     border: none;
 }
 @media only screen and (max-width:599px){
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Nunito';
+    }
     body{
         overflow-x: hidden;
     }
@@ -93,7 +98,7 @@ header{
         height: 60%;
         width: 20%;
     }
-    nav.showbar{
+    nav.show-navbar{
         transform: translateX(0);
     }
     #hamburger-menu .line {
@@ -104,14 +109,19 @@ header{
     }
     #blogs{
         position: absolute;
-        right: 20px;
-        top:200px;
+        left:150px;
+        top:100px
     }
     .blog1,.blog2,.blog3{
-        width: 600px;
+        width: 400px;
     }
     .blog1 .read-more,.blog2 .read-more,.blog3 .read-more{
       margin-right: 800px;
+    }
+    .read-more {
+        left: 80%;
+        margin-right: 20px;
+        width:80px;
     }
 }
 @media screen and (min-width:600px) and (max-width:1100px) {

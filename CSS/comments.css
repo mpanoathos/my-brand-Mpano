@@ -29,19 +29,10 @@ nav a{
 }
 #hamburger-menu{
     display: none;
+    position: absolute;
+    top: 10px;
 }
-#hamburger-menu.active .line:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-#hamburger-menu.active .line:nth-child(2) {
-    opacity: 0;
-}
-
-#hamburger-menu.active .line:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-.line1,.line2,.line3{
+.line{
     border: 3px solid #333;
     width: 20px;
     margin-top: 8px;
@@ -68,6 +59,7 @@ nav a{
         height: auto;
         width: 150px;
     }
+    nav.show
     nav a{
         padding: 5px;
     }
