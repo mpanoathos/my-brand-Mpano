@@ -129,7 +129,7 @@ margin-left:20px;
         transform: translateX(0);
     }
     #hamburger-menu{
-        /* display: block;? */
+        display: block;
         cursor: pointer;
         position: absolute;
         top:10px;
@@ -148,11 +148,10 @@ margin-left:20px;
     #hamburger-menu.active .line:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
-    
-    #profile{
+    #profile {
     width: 1000px;
     height: 90px;
-    left: 220px;
+    left: 200px;
     top:10px;
     }
     #profile h1{
@@ -169,15 +168,15 @@ margin-left:20px;
         font-size: 30px;
     }
     .blog1,.blog2,.blog3{
-        height: 750px;
-        width: 550px;
-        margin-top: 20px;
+        height: 380px;
+        width: 380px;
+        margin-top: 100px;
     }
     .blog2,.blog3{
-        height:750px;
+        height:350px;
     }
     #blogs a img{
-        height: 680px;
+        height: 320px;
         width: 100%;
     }
     #create{
@@ -186,7 +185,7 @@ margin-left:20px;
     #blogs{
         position: absolute;
         top:110px;
-        left:450px
+        left:550px
     }
     
  }
