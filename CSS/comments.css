@@ -53,15 +53,40 @@ nav a{
 @media screen and (max-width:599px){
     nav{
         display: none;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    nav a{
+        padding: 5px;
     }
     #hamburger-menu{
         display: block;
+        z-index: 100;
     }
-    
+    #comments{
+        position: static; 
+        top: auto;
+        left: auto;
+    }
+    #comments h1{
+        text-align: center;
+    }
 #comments .comment{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
+    width: 100%;
 }
 }
+@media screen and (min-width:600px) and (max-width:1024px) {
+    nav {
+        height: auto; 
+        width: 1260px;
+        flex-direction: row; 
+    }
+    #comments{
+        position: absolute;
+        top:80px;
+    }
+    #comments .comment{
+        width: 300px;
+    }
+} 
