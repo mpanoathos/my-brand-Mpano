@@ -129,11 +129,14 @@ margin-left:20px;
         transform: translateX(0);
     }
     #hamburger-menu{
-        display: block;
+        /* display: block;? */
         cursor: pointer;
         position: absolute;
         top:10px;
     }
+    #hamburger-menu .line {
+        transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+    }    
     #hamburger-menu.active .line:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }

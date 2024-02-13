@@ -30,6 +30,17 @@ nav a{
 #hamburger-menu{
     display: none;
 }
+#hamburger-menu.active .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#hamburger-menu.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger-menu.active .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
 .line1,.line2,.line3{
     border: 3px solid #333;
     width: 20px;
@@ -40,7 +51,7 @@ nav a{
     position: absolute;
     top: 30px;
     left:520px;
-    width:100%;
+    width:60%;
 }
 #comments .comment{
     margin-top: 20px;
@@ -52,22 +63,25 @@ nav a{
 }
 @media screen and (max-width:599px){
     nav{
-        display: none;
+        transform: translateX(-100%);
         flex-direction: column;
         height: auto;
-        width: 100%;
+        width: 150px;
     }
     nav a{
         padding: 5px;
+    }
+    nav.show-navbar{
+        transform: translateX(0);
     }
     #hamburger-menu{
         display: block;
         z-index: 100;
     }
     #comments{
-        position: static; 
-        top: auto;
-        left: auto;
+        position: absolute; 
+        top:20px;
+        left: 180px;
     }
     #comments h1{
         text-align: center;
