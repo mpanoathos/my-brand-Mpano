@@ -137,17 +137,6 @@ margin-left:20px;
     #hamburger-menu .line {
         transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
     }    
-    #hamburger-menu.active .line:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    #hamburger-menu.active .line:nth-child(2) {
-        opacity: 0;
-    }
-    
-    #hamburger-menu.active .line:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
     #profile {
     width: 700px;
     height: 90px;
