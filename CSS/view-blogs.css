@@ -27,10 +27,16 @@ nav a{
 }
 #hamburger-menu{
     display: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }
-.line1,.line2,.line3{
+.line{
     border: 3px solid #333;
-    width: 20px;
+    width: 30px;
     margin-top: 8px;
     margin-left: 20px;
 }
@@ -76,19 +82,29 @@ header{
     border: none;
 }
 @media only screen and (max-width:599px){
+    body{
+        overflow-x: hidden;
+    }
     nav{
-        transform: translateX(100%);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+        width: 20%;
     }
     nav.showbar{
         transform: translateX(0);
     }
-    
+    #hamburger-menu .line {
+        transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+    }    
     #hamburger-menu{
         display: block;
     }
     #blogs{
         position: absolute;
-        right: 450px;
+        right: 20px;
         top:200px;
     }
     .blog1,.blog2,.blog3{

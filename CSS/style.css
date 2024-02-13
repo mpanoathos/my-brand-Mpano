@@ -354,7 +354,6 @@ margin-left:20px;
     }
     #hamburger-menu .line {
         transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
-        z-index: 100;
     }    
     .home-images {
         margin-top: 20px;
