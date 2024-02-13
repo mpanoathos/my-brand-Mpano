@@ -53,13 +53,15 @@ nav a{
     box-shadow: 1px solid rgb(253, 197, 94);
 }
 @media screen and (max-width:599px){
+    body{
+        overflow-x: hidden;
+    }
     nav{
         transform: translateX(-100%);
         flex-direction: column;
         height: auto;
         width: 150px;
     }
-    nav.show
     nav a{
         padding: 5px;
     }
@@ -73,12 +75,12 @@ nav a{
     #comments{
         position: absolute; 
         top:20px;
-        left: 180px;
+        left: 90px;
     }
     #comments h1{
         text-align: center;
     }
-#comments .comment{
+    #comments .comment{
     width: 100%;
 }
 }
