@@ -127,6 +127,8 @@ margin-left:20px;
     nav{
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
+        height: 1000px;
+        width:200px;
     }
     nav.show-navbar {
         transform: translateX(0);
@@ -143,7 +145,7 @@ margin-left:20px;
     #profile {
     width: 700px;
     height: 90px;
-    left: 200px;
+    left: 150px;
     top:10px;
     }
     #profile h1{
@@ -177,11 +179,11 @@ margin-left:20px;
     .blogs{
         position: absolute;
         top:110px;
-        left:500px
+        left:450px
     }
     
  }
- @media only screen and (min-width:600px) and (max-width:1023px) {
+ @media only screen and (min-width:600px) and (max-width:1366px) {
     nav{
        transform: translateX(-100%);    
     }
