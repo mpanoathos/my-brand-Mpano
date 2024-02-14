@@ -20,7 +20,7 @@ nav{
     z-index: 100; 
     width:200px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-    background-color: rgb(253, 197, 94);
+    background-color: rgb(254, 188, 65);
 }
 nav a{
     text-decoration: none;
@@ -43,6 +43,7 @@ nav a{
     top: 30px;
     left:520px;
     width:60%;
+    z-index: 0;
 }
 #comments .comment{
     margin-top: 20px;
@@ -58,12 +59,10 @@ nav a{
     }
     nav{
         transform: translateX(-100%);
-        flex-direction: column;
-        height: auto;
-        width: 150px;
-    }
-    nav a{
-        padding: 5px;
+        transition: transform 0.3s ease-in-out;
+        height: 500px;
+        width:200px;
+        z-index: 200;
     }
     nav.show-navbar{
         transform: translateX(0);
@@ -84,7 +83,7 @@ nav a{
     width: 100%;
 }
 }
-@media screen and (min-width:600px) and (max-width:1366px) {
+@media screen and (min-width:600px) and (max-width:1266px) {
     nav {
         height: auto; 
         width: 1260px;

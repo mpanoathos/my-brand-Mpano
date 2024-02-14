@@ -24,15 +24,10 @@ nav a{
     text-decoration: none;
     padding: 8px 12px;
     color: #333;
+    margin-left:20px;
 }
 #hamburger-menu{
     display: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 20px;
-    left: 20px;
 }
 .line{
     border: 3px solid #333;
@@ -102,12 +97,15 @@ header{
     nav.show-navbar{
         transform: translateX(0);
     }
+    #hamburger-menu{
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top:10px;
+    }
     #hamburger-menu .line {
         transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
     }    
-    #hamburger-menu{
-        display: block;
-    }
     #blogs{
         position: absolute;
         left:150px;

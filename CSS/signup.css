@@ -97,10 +97,18 @@ button:hover{
         z-index: 100;
     }
     nav{
-        display:none;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
         flex-direction: column;
         width: 60%;
     }
+    nav.show-navbar{
+        transform: translateX(0);
+    }
+    #hamburger-menu .line {
+        transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+    }    
     .wrapper{
         position: absolute;
         left:40px;
