@@ -62,19 +62,19 @@ nav a{
         transition: transform 0.3s ease-in-out;
         height: 500px;
         width:200px;
-        z-index: 200;
+        z-index: 1000;
     }
     nav.show-navbar{
         transform: translateX(0);
     }
     #hamburger-menu{
         display: block;
-        z-index: 100;
     }
     #comments{
         position: absolute; 
         top:20px;
         left: 90px;
+        z-index: 0;
     }
     #comments h1{
         text-align: center;
