@@ -281,6 +281,11 @@ form textarea{
     padding: 10px;
     outline: none;
 }
+#contact-form .name-error,#contact-form .email-error{
+    color:red;
+    font-size: small;
+    display: none;
+}
 #footer{
     background-color:#85630d;
     height: 150px;

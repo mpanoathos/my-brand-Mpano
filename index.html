@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/letter-a.png">
     <link rel="stylesheet" href="./CSS/style.css">
+    <script defer src="./JS/index.js"></script>
     <title>ATHOS</title>
 </head>
 <body>
@@ -121,10 +122,12 @@
 </section>
 <section id="contact-me">
     <h2>Contact Me</h2>
-    <form>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Message" cols="35" rows="8"></textarea>
+    <form id="contact-form" name="form" onsubmit="return validated()">
+        <input type="text" placeholder="Name" autocomplete="off" name="name" class="name">
+        <div  class="name-error">Please fill your name</div>
+        <input type="text" autocomplete="off" placeholder="Email" name="email" class="email">
+        <div  class="email-error">Invalid email adress</div>
+        <textarea placeholder="Message" cols="35" rows="8" name="Message" class="message"></textarea>
         <button>Submit</button>
     </form>
 </section>
@@ -153,6 +156,5 @@
     </span>
 </section>
 </section>
-<script src="./JS/index.js"></script>
 </body>
 </html>
