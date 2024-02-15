@@ -1,29 +1,27 @@
-document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('nav');
     const hamburgerMenu = document.getElementById('hamburger-menu');
+    const form = document.forms['form'];
+    const name = form['name'];  
+    const password = form['password'];
+    const newPassword=form['new-password']
+    const name_error = document.querySelector('.name-error');
+    const pass_error = document.querySelector('.pass-error');
+    const pass2_error=document.querySelector('.pass2-error')
+    const newPass_error=document.querySelector('.new-pass-error')
 
     document.addEventListener('click', function () {
         navbar.classList.toggle('show-navbar');
         hamburgerMenu.classList.toggle('active');
     });
 
-    // validate form
-    const form = document.forms['form'];
-    const name = form['name'];  // Corrected this line
-    const password = form['password'];
-    const newPassword=form['new-password']
-    const name_error = document.querySelector('.name-error');
-    const pass_error = document.querySelector('.pass-error');
-    const newPass_error=document.querySelector('.new-pass-error')
-
     // Add input event listener for real-time validation
     name.addEventListener('input', () => {
-        name.style.border = '';  // Reset border style
+        name.style.border = '';  
         name_error.style.display = 'none';
     });
 
     password.addEventListener('input', () => {
-        password.style.border = '';  // Reset border style
+        password.style.border = '';  
         pass_error.style.display = 'none';
     });
     newPassword.addEventListener('input',()=>{
@@ -39,14 +37,19 @@ document.addEventListener('DOMContentLoaded', function () {
             return false;
         }
 
-        if (password.value.length < 9) {
+        if (password.value.length < 9 && password.value.length>0) {
+            password.style.border = '1px solid red';
+            pass2_error.style.display = 'block';
+            password.focus();
+            return false;
+        }
+        if(password.value.trim() == ""){
             password.style.border = '1px solid red';
             pass_error.style.display = 'block';
             password.focus();
             return false;
         }
-
-        if (newPassword!==password){
+        if (newPassword.value!==password.value){
             newPass_error.style.display='block'
             return false
         }
@@ -59,4 +62,4 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
         }
     });
-});
+

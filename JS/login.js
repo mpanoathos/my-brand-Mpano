@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = form['password'];
     const name_error = document.querySelector('.name-error');
     const pass_error = document.querySelector('.pass-error');
+    const pass2_error=document.querySelector('.pass2-error')
 
     // Add input event listener for real-time validation
     name.addEventListener('input', () => {
@@ -36,11 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
 
-        if (password.value.length < 9) {
+        if (password.value.length === 0) {
             password.style.border = '1px solid red';
             pass_error.style.display = 'block';
             password.focus();
             return false;
+        }
+        if(password.value.length < 9){
+            password.style.border = '1px solid red';
+            pass2_error.style.display = 'block';
+            password.focus();
+            return false
         }
         return true;
     }

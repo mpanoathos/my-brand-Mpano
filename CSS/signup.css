@@ -59,7 +59,8 @@ nav a{
 
 .name-error,
 .pass-error,
-.new-pass-error{
+.new-pass-error,
+.pass2-error{
         color: red;
         font-size: small;
         display: none;

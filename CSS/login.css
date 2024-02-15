@@ -57,7 +57,8 @@ nav a{
     width: 100%;
 }
 .name-error,
-.pass-error{
+.pass-error,
+.pass2-error{
         color: red;
         font-size: small;
         display: none;
