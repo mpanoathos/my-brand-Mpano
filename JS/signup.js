@@ -1,9 +1,51 @@
-document.addEventListener('DOMContentLoaded',function(){
-    const navbar=document.querySelector('nav');
-    const hamburgerMenu=document.getElementById('hamburger-menu');
+document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.querySelector('nav');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
 
-    document.addEventListener('click',function(){
+    document.addEventListener('click', function () {
         navbar.classList.toggle('show-navbar');
         hamburgerMenu.classList.toggle('active');
-    })
-})
+    });
+
+    // validate form
+    const form = document.forms['form'];
+    const name = form['name'];  // Corrected this line
+    const password = form['password'];
+    const newPassword=form['new-password']
+    const name_error = document.querySelector('.name-error');
+    const pass_error = document.querySelector('.pass-error');
+
+    // Add input event listener for real-time validation
+    name.addEventListener('input', () => {
+        name.style.border = '';  // Reset border style
+        name_error.style.display = 'none';
+    });
+
+    password.addEventListener('input', () => {
+        password.style.border = '';  // Reset border style
+        pass_error.style.display = 'none';
+    });
+
+    function validated() {
+        if (name.value.trim() === "") {
+            name.style.border = "1px solid red";
+            name_error.style.display = 'block';
+            name.focus();
+            return false;
+        }
+
+        if (password.value.length < 9) {
+            password.style.border = '1px solid red';
+            pass_error.style.display = 'block';
+            password.focus();
+            return false;
+        }
+
+        return true;
+    }
+    form.addEventListener('submit', function (e) {
+        if (!validated()) {
+            e.preventDefault();
+        }
+    });
+});

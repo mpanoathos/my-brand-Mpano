@@ -56,6 +56,12 @@ nav a{
     border: 1px solid #333;
     width: 100%;
 }
+.name-error,
+.pass-error,{
+        color: red;
+        font-size: small;
+        display: none;
+    }
 .remember-forgot label{
     margin-right: 30px;
 }
