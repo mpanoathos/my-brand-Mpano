@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return true;
     }
-    if(new)
 
     form.addEventListener('submit', function (e) {
         if (!validated()) {
