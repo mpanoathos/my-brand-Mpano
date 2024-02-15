@@ -148,6 +148,7 @@ margin-left:20px;
     height: 90px;
     left: 80px;
     top:10px;
+    z-index: 0;
     }
     #profile h1{
         bottom: 140px;

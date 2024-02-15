@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const newPassword=form['new-password']
     const name_error = document.querySelector('.name-error');
     const pass_error = document.querySelector('.pass-error');
+    const newPass_error=document.querySelector('.new-pass-error')
 
     // Add input event listener for real-time validation
     name.addEventListener('input', () => {
@@ -25,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
         password.style.border = '';  // Reset border style
         pass_error.style.display = 'none';
     });
+    newPassword.addEventListener('input',()=>{
+        password.style.border='';
+        pass_error.style.display='none';
+    })
 
     function validated() {
         if (name.value.trim() === "") {
@@ -41,8 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return false;
         }
 
+        if (newPassword!==password){
+            newPass_error.style.display='block'
+            return false
+        }
+
         return true;
     }
+    
     form.addEventListener('submit', function (e) {
         if (!validated()) {
             e.preventDefault();

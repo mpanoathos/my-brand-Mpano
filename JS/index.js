@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const name_error = document.querySelector('.name-error');
     const email_error = document.querySelector('.email-error');
 
+    name.addEventListener('input',name_verify)
     email.addEventListener('input', email_verify);
-
     function validated() {
         if (name.value.trim() === "") {
             name.style.border = "1px solid red";
@@ -53,9 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function email_verify() {
+        name.style.border = ''; 
         email_error.style.display = 'none';
     }
-
+    function name_verify(){
+        name.style.border = ''; 
+        name_error.style.display='none';
+    }
     function isValidEmail(email) {
         // Simple email validation, you might want to improve it
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
