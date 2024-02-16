@@ -1,33 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Event listener for hamburger menu
     const navbar = document.querySelector("nav");
     const hamburgerMenu = document.getElementById("hamburger-menu");
+    hamburgerMenu.addEventListener("click", toggleNavbar);
 
-    hamburgerMenu.addEventListener("click", function () {
-        // Toggle the visibility of the navigation bar
+    // Event listener for downloading CV
+    document.querySelector('.cv').addEventListener('click', downloadCV);
+
+    // Form validation and submission
+    const form = document.forms['form'];
+    const name = form['name'];
+    const email = form['email'];
+    const name_error = document.querySelector('.name-error');
+    const email_error = document.querySelector('.email-error');
+    name.addEventListener('input', nameVerify);
+    email.addEventListener('input', emailVerify);
+    form.addEventListener('submit', submitForm);
+
+    // Functions
+    function toggleNavbar() {
         navbar.classList.toggle("show-navbar");
-
-        // Toggle the appearance of the hamburger menu icon
         hamburgerMenu.classList.toggle("active");
-    });
+    }
 
-    // Downloading CV
-    document.querySelector('.cv').addEventListener('click', () => {
+    function downloadCV() {
         let link = document.createElement('a');
         link.href = './images/CV.pdf';
         link.target = '_blank';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-    });
+    }
 
-    const form = document.forms['form'];
-    const name = form['name'];
-    const email = form['email'];
-    const name_error = document.querySelector('.name-error');
-    const email_error = document.querySelector('.email-error');
+    function nameVerify() {
+        name.style.border = '';
+        name_error.style.display = 'none';
+    }
 
-    name.addEventListener('input',name_verify)
-    email.addEventListener('input', email_verify);
+    function emailVerify() {
+        email.style.border = '';
+        email_error.style.display = 'none';
+    }
+
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
     function validated() {
         if (name.value.trim() === "") {
             name.style.border = "1px solid red";
@@ -46,23 +65,27 @@ document.addEventListener("DOMContentLoaded", function () {
         return true;
     }
 
-    form.addEventListener('submit', function (e) {
+    function submitForm(e) {
         if (!validated()) {
             e.preventDefault();
+        } else {
+            storeFormData();
+            redirectToCommentsPage();
         }
-    });
+    }
 
-    function email_verify() {
-        name.style.border = ''; 
-        email_error.style.display = 'none';
+    function storeFormData() {
+        var formData = {
+            name: name,
+            email: email,
+            message: document.forms["form"]["Message"].value
+        };
+        var jsonData = JSON.stringify(formData);
+        localStorage.setItem('formData', jsonData);
     }
-    function name_verify(){
-        name.style.border = ''; 
-        name_error.style.display='none';
-    }
-    function isValidEmail(email) {
-        // Simple email validation, you might want to improve it
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+
+    function redirectToCommentsPage() {
+        window.location.href = 'comments.html';
+        return false; // Prevent the form from submitting through the traditional way
     }
 });
