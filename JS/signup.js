@@ -26,7 +26,7 @@ password.addEventListener('input', () => {
     pass_error.style.display = 'none';
 });
 newPassword.addEventListener('input',()=>{
-    password.style.border='';
+    newPassword.style.border='';
     pass2_error.style.display='none';
 })
 
