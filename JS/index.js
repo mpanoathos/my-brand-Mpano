@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function storeFormData() {
         var formData = {
-            name: name,
-            email: email,
+            name: document.forms["form"]["name"].value,
+            email: document.forms["form"]["email"].value,
             message: document.forms["form"]["Message"].value
         };
         var jsonData = JSON.stringify(formData);
