@@ -9,4 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // Toggle the appearance of the hamburger menu icon
         hamburgerMenu.classList.toggle("active");
     });
-});
+  // Check if the user is authenticated
+        const user = JSON.parse(localStorage.getItem('user'));
+    
+        if (!user) {
+            // Redirect or perform actions for unauthenticated users
+            window.location.href = 'login.html';
+        }
+    });
+

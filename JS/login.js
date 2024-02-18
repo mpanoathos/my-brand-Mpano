@@ -57,4 +57,45 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
         }
     });
-});
+        const loginForm = document.forms.form;
+    
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            const username = loginForm.elements.name.value;
+            const password = loginForm.elements.password.value;
+    
+            // Perform simple authentication
+            if (authenticateUser(username, password)) {
+                // Save user information in local storage
+                localStorage.setItem('user', JSON.stringify({ username }));
+    
+                // Redirect to the dashboard or perform actions for successful authentication
+                window.location.href = 'dashboard.html';
+            } else {
+                // Handle authentication failure
+                alert('Authentication failed. Please check your credentials.');
+            }
+        });
+    
+        function authenticateUser(username, password) {
+            // Replace this with your actual authentication logic
+            
+            // For simplicity, let's assume a hardcoded set of valid credentials
+            const validCredentials = [
+                { username: 'mpano', password: 'barera0009' },
+                
+            ];
+        
+            // Check if the provided username and password match any valid credentials
+            const isValidUser = validCredentials.some(cred => cred.username === username && cred.password === password);
+        
+            return isValidUser;
+        }
+        
+
+    // Check if the provided username and password match any valid credentials
+    const isValidUser = validCredentials.some(cred => cred.username === username && cred.password === password);
+
+    return isValidUser;
+})
