@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector("nav");
     const hamburgerMenu = document.getElementById("hamburger-menu");
 
     hamburgerMenu.addEventListener("click", function () {
@@ -38,8 +37,7 @@ function displayStoredFormData() {
 
 // Function to display the comment
 function displayComment(formData) {
-    var commentSection = document.getElementById('commentSection');
-
+    var commentSection = document.getElementById('comment-section');
     var commentDiv = document.createElement('div');
     commentDiv.innerHTML = `
         <strong>Name:</strong> ${formData.name}<br>
