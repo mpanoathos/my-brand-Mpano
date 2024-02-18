@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/letter-a.png">
+    <link rel="stylesheet" href="./CSS/blog2.css">
+    <title>TS</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html#home"><B><img src="./images/letter-a.png" width="50px" height="50px"></B></a>
+        <a href="index.html#home">HOME</a>
+        <a href="dashboard.html">DASHBOARD</a>
+        <a href="view-blogs.html">VIEW BLOGS</a>
+        <a href="create-blog.html">CREATE BLOG</a>
+        <a href="comments.html">COMMENTS</a>
+        <a href="login.html"><b>LOGIN</b></a> 
+    </nav>
+    <div id="hamburger-menu">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>
+    <div class="blog2">
+        <header>Technical Support Fundamentals</header>
+        <button class="read-more" data-target="blog2">Read more</button>
+        <div class="blogs-paragraph">
+        <p>Technical support is a crucial aspect of ensuring that users can effectively use and troubleshoot technology products and services. Here are some fundamental principles and best practices in technical support:</p>
+                <p><b>Effective Communication:</b><br>
+                    Active Listening: Pay attention to the user's description of the issue. Repeat key points to confirm understanding.<br>
+                    Clarity: Communicate in a clear and concise manner. Avoid technical jargon unless the user is familiar with it.</p>
+                <p><b>Customer Focus:</b><br>
+                    Empathy: Understand and acknowledge the user's frustration or concerns.<br>
+                    Patience: Users may not be as tech-savvy as support agents. Be patient and guide them step by step.</p>
+                <p><b>Technical Knowledge:</b><br>
+                    Product Knowledge: Have a deep understanding of the products or services being supported.
+                    Continuous Learning: Stay updated on new technologies and updates related to the supported products.</p>
+                <p><b>Problem-Solving Skills:</b><br>
+                    Analytical Thinking: Evaluate issues logically and methodically to identify the root cause.
+                    Troubleshooting: Develop effective troubleshooting skills to isolate and resolve problems efficiently.</p>
+        </div>
+        <div class="leave-comment">
+            <h3>Leave a comment</h3>
+            <input type="text" id="commenterName" placeholder="Your Name">
+            <div><textarea  class="messageInput"></textarea></div>
+            <p id="error-message">Enter message</p>
+            <button id="submitMessage">Submit</button>
+        </div>
+        <div class="display-message">
+            <h3>Messages</h3>
+            <ul id="commentList"></ul>
+        </div>
+            </div>
+            <script src="./JS/blog2.js"></script>
+</body>
+</html>

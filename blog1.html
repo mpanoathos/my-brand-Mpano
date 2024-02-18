@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/letter-a.png">
+    <link rel="stylesheet" href="./CSS/blog1.css">
+    <title>SE</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html#home"><B><img src="./images/letter-a.png" width="50px" height="50px"></B></a>
+        <a href="index.html#home">HOME</a>
+        <a href="dashboard.html">DASHBOARD</a>
+        <a href="view-blogs.html">VIEW BLOGS</a>
+        <a href="create-blog.html">CREATE BLOG</a>
+        <a href="comments.html">COMMENTS</a>
+        <a href="login.html"><b>LOGIN</b></a> 
+    </nav>
+    <div id="hamburger-menu">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>
+    <div class="blog1">
+        <header>Software Engineering Practices</header>
+        <button class="read-more" data-target="blog1">Read more</button>
+        <div class="blogs-paragraph">
+            <p>In the fast-paced world of technology, software engineering practices play a pivotal role in shaping the success and efficiency of software development projects. Whether you're a seasoned developer or just starting your journey in the field, adopting effective software engineering practices is crucial for building robust, scalable, and maintainable software solutions. In this blog post, we will explore some key practices that can elevate your software engineering game and contribute to the success of your projects.</p>
+            <p><b>Agile Development:</b><br>
+                Embracing Agile methodologies is a cornerstone of modern software engineering. Agile emphasizes iterative development, collaboration, and adaptability. Scrum and Kanban are popular frameworks within the Agile umbrella, offering structured approaches to managing projects. Through regular sprints, feedback loops, and continuous integration, Agile methodologies enhance communication, flexibility, and the ability to respond to changing requirements.</p>
+            <p><b>Version Control:</b><br>
+                Version control systems, such as Git, are indispensable tools for software development. They enable multiple developers to work on a project simultaneously without conflicts, track changes, and provide a safety net for rolling back to previous versions. Mastering Git and understanding branching strategies contribute to a streamlined and collaborative development process.</p>
+            <p><b>Test-Driven Development (TDD):</b><br>
+                Test-Driven Development is a practice where tests are written before the actual code. This approach ensures that each component of the software performs as intended and helps catch bugs early in the development cycle. TDD not only improves code quality but also provides a safety net for refactoring and maintaining code over time.</p>
+            </div>
+            <div class="leave-comment">
+                <h3>Leave a comment</h3>
+                <input type="text" id="commenterName" placeholder="Your Name">
+                <div><textarea  class="messageInput"></textarea></div>
+                <p id="error-message">Enter message</p>
+                <button id="submitMessage">Submit</button>
+            </div>
+            <div class="display-message">
+                <h3>Messages</h3>
+                <ul id="commentList"></ul>
+            </div>
+            </div>
+            <script src="./JS/blog1.js"></script>
+</body>
+</html>
