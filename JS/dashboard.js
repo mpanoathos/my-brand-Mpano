@@ -1,4 +1,11 @@
+const auth = new Auth();
+
+document.querySelector('.logout').addEventListener('click', (e) => {
+    auth.logOut();
+});
+
 document.addEventListener("DOMContentLoaded", function () {
+    // Navigation bar and hamburger menu handling
     const navbar = document.querySelector("nav");
     const hamburgerMenu = document.getElementById("hamburger-menu");
 
@@ -9,12 +16,4 @@ document.addEventListener("DOMContentLoaded", function () {
         // Toggle the appearance of the hamburger menu icon
         hamburgerMenu.classList.toggle("active");
     });
-  // Check if the user is authenticated
-        const user = JSON.parse(localStorage.getItem('user'));
-    
-        if (!user) {
-            // Redirect or perform actions for unauthenticated users
-            window.location.href = 'login.html';
-        }
-    });
-
+});

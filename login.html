@@ -9,39 +9,40 @@
 </head>
 <body>
     <nav>
-        <a href="index.html"><B><img src="./images/letter-a.png" width="50px" height="50px"></B></a>
+        <a href="index.html"><b><img src="./images/letter-a.png" width="50px" height="50px"></b></a>
         <a href="index.html">HOME</a>
         <a href="index.html">ABOUT</a>
         <a href="index.html">PORTFOLIO</a>
         <a href="index.html">BLOG</a>
         <a href="index.html">CONTACT ME</a>
-        <a href="index.html"><b>LOGIN</b></a> 
+        <a href="index.html"><b>LOGIN</b></a>
     </nav>
     <div id="hamburger-menu">
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
-        </div>
+    </div>
     <div class="wrapper">
-    <form name="form">
-        <h1>Login</h1>
-        <div class="input-box">
-    <input type="text" autocomplete="off" placeholder="User name" name="name"></div>
-    <div class="name-error">Please fill in your user name</div>
-<div class="input-box">
-    <input type="password" placeholder=" Password" name="password"></div>
-    <div class="pass-error">Please fill in your password</div>
-    <div class="pass2-error">Your password must have 8 characters</div><br>
-<div class="remember-forgot">
-<label><input type="checkbox">Remember me</label>
-<a href="#">Forgot Password?</a>
-</div>
-    <button>Signin</button>
-<div class="register-link">
-    <p>Don't have an account? <a href="signup.html"><b>Register</b></a></p>
-</div>
-</form>
-</div>
-<script src="./JS/login.js"></script>
+        <form name="form" action="dashboard.html" class="loginForm">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" autocomplete="off" placeholder="User name" id="username">
+                <div class="error-message"></div>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" id="password">
+                <div class="error-message"></div>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button>Sign in</button>
+            <div class="register-link">
+                <p>Don't have an account? <a href="signup.html"><b>Register</b></a></p>
+            </div>
+        </form>
+    </div>
+    <script src="./JS/login.js"></script>
 </body>
 </html>
