@@ -49,10 +49,10 @@ nav a{
 .blog2,.blog3{
     margin-top: 20px;
 }
-.read-more{
+.delete-button,.update-button{
     display: block;
-    position: relative;
-    left:800px;
+    cursor: pointer;
+    margin-top: 5px;
     padding: 10px;
     background-color:rgb(253, 197, 94);
     border: none;

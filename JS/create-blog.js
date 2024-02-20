@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    addBlogPost();
+    // Retrieve URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const titleInput = document.getElementById('blogTitle');
+    const contentInput = document.getElementById('blogContent');
+
+    // Pre-fill form fields if URL parameters exist
+    if (urlParams.has('title') && urlParams.has('content')) {
+        titleInput.value = decodeURIComponent(urlParams.get('title'));
+        contentInput.value = decodeURIComponent(urlParams.get('content'));
+    }
+
     const navbar = document.querySelector("nav");
     const hamburgerMenu = document.getElementById("hamburger-menu");
 
@@ -9,36 +19,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Toggle the appearance of the hamburger menu icon
         hamburgerMenu.classList.toggle("active");
-    
     });
 
-// Retrieve existing blog posts from local storage or initialize an empty array
-let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+    // Retrieve existing blog posts from local storage or initialize an empty array
+    let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
 
-// Function to add a new blog post
-function addBlogPost() {
-    const titleInput = document.getElementById('blogTitle');
-    const contentInput = document.getElementById('blogContent');
-    const title = titleInput.value;
-    const content = contentInput.value;
+    // Function to add a new blog post or update an existing one
+    function addOrUpdateBlogPost() {
+        const title = titleInput.value;
+        const content = contentInput.value;
 
-    if (title && content) {
-        // Create a new blog post object
-        const newPost = { title, content };
+        if (title && content) {
+            // Check if updating an existing post by checking for URL parameters
+            const updatingPost = urlParams.has('title') && urlParams.has('content');
 
-        // Add the new post to the array
-        blogPosts.push(newPost);
+            if (updatingPost) {
+                // If updating, find the index of the post to update
+                const indexToUpdate = blogPosts.findIndex(post =>
+                    post.title === decodeURIComponent(urlParams.get('title')) &&
+                    post.content === decodeURIComponent(urlParams.get('content'))
+                );
 
-        // Save the updated array to local storage
-        localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+                // Update the existing post
+                if (indexToUpdate !== -1) {
+                    blogPosts[indexToUpdate] = { title, content };
+                }
+            } else {
+                // If creating a new post, add it to the array
+                blogPosts.push({ title, content });
+            }
 
-        // Clear input fields
-        titleInput.value = '';
-        contentInput.value = '';
+            // Save the updated array to local storage
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
 
-        // Redirect to another page (replace 'another-page.html' with your desired page)
-        window.location.href = 'view-blogs.html';
+            // Clear input fields
+            titleInput.value = '';
+            contentInput.value = '';
+
+            // Redirect to another page (replace 'another-page.html' with your desired page)
+            window.location.href = 'view-blogs.html';
+        }
     }
-}
-document.getElementById('submitBtn').addEventListener('click', addBlogPost);
+
+    document.getElementById('submitBtn').addEventListener('click', addOrUpdateBlogPost);
 });

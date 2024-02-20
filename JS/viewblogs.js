@@ -1,31 +1,42 @@
-// Retrieve existing blog posts from local storage or initialize an empty array
-let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-
-// Function to display blog posts on another page
-function displayBlogPosts() {
-    const blogPostsContainer = document.getElementById('blogs');
-
-    blogPosts.forEach(post => {
-        const postElement = document.createElement('div');
-        postElement.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
-        postElement.style.border="1px solid rgb(255, 187, 59)";
-        postElement.style.borderRadius="20px";
-        postElement.style.margin="20px 0px";
-        postElement.style.padding="20px"
-        postElement.style.width="1000px"
-        blogPostsContainer.appendChild(postElement);
-    });
-}
-
-// Initial display of blog posts on page load
 document.addEventListener("DOMContentLoaded", function () {
+    const blogPostsContainer = document.getElementById('blogs');
+    let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+    
+    function displayBlogPosts() {
+        blogPosts.forEach((post, index) => {
+            const postElement = document.createElement('div');
+            postElement.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>
+                                     <button class="delete-button" data-index="${index}">Delete</button>
+                                     <button class="update-button" data-index="${index}">Update</button>`;
+            postElement.style.border = "1px solid rgb(255, 187, 59)";
+            postElement.style.borderRadius = "20px";
+            postElement.style.margin = "20px 0px";
+            postElement.style.padding = "20px";
+            postElement.style.width = "1000px";
+            blogPostsContainer.appendChild(postElement);
+        });
+    }
+
+    blogPostsContainer.addEventListener('click', function (event) {
+        if (event.target.classList.contains('delete-button')) {
+            const indexToDelete = parseInt(event.target.getAttribute('data-index'), 10);
+            blogPosts.splice(indexToDelete, 1);
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+            blogPostsContainer.innerHTML = '';
+            displayBlogPosts();
+        } else if (event.target.classList.contains('update-button')) {
+            const indexToUpdate = parseInt(event.target.getAttribute('data-index'), 10);
+            const blogPostToUpdate = blogPosts[indexToUpdate];
+            window.location.href = `create-blog.html?title=${encodeURIComponent(blogPostToUpdate.title)}&content=${encodeURIComponent(blogPostToUpdate.content)}`;
+        }
+    });
+
     // Call the function to display blog posts
     displayBlogPosts();
 
     // Rest of your existing code for event listeners, etc.
     const navbar = document.querySelector("nav");
     const hamburgerMenu = document.getElementById("hamburger-menu");
-    const readMoreButtons = document.querySelectorAll('.read-more');
 
     hamburgerMenu.addEventListener("click", function () {
         // Toggle the visibility of the navigation bar
@@ -35,13 +46,4 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburgerMenu.classList.toggle("active");
     });
 
-    readMoreButtons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            const target = btn.getAttribute('data-target');
-            const paragraph = document.querySelector(`.${target} .blogs-paragraph`);
-
-            paragraph.style.display = (paragraph.style.display === 'none' || paragraph.style.display === '') ? 'block' : 'none';
-            btn.innerText = (paragraph.style.display === 'none') ? 'Read More' : 'Read Less';
-        });
-    });
 });
