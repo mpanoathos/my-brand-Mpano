@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Load messages from localStorage if available
-    let comments2 = JSON.parse(localStorage.getItem('comments')) || [];
+    let comments2 = JSON.parse(localStorage.getItem('comments2')) || [];
 
     // Display existing comments
     displayComments();
