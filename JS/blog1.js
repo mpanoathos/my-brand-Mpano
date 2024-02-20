@@ -7,7 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const displayMessage = document.getElementById('commentList');
     const errorMessage = document.getElementById('error-message');
     const commenterNameInput = document.getElementById('commenterName');
+    const blogContentContainer = document.querySelector('.blogs-paragraph');
+    const queryParams = new URLSearchParams(window.location.search);
+    const title = decodeURIComponent(queryParams.get('title'));
+    const content = decodeURIComponent(queryParams.get('content'));
 
+    // Display the blog post content
+    blogContentContainer.innerHTML = `<h3>${title}</h3><p>${content}</p>`
     // Hamburger menu toggle
     hamburgerMenu.addEventListener("click", function () {
         navbar.classList.toggle("show-navbar");
