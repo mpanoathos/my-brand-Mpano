@@ -1,3 +1,6 @@
+
+const auth = new Auth();
+
  class Login{
 constructor(form,fields){
     this.form=form;
