@@ -4,24 +4,37 @@ constructor(form,fields){
     this.fields=fields;
     this.validateOnSubmit();
 }
-validateOnSubmit(){
-    let self=this;
+validateOnSubmit() {
+    let self = this;
 
-    this.form.addEventListener('submit',(e)=>{
+    this.form.addEventListener('submit', (e) => {
         e.preventDefault();
-        var error=0
-        self.fields.forEach((field)=>{
-            const input=document.querySelector(`#${field}`);
-            if(self.validateFields(input) == false){
-                error++
+        let error = 0;
+
+        self.fields.forEach((field) => {
+            const input = document.querySelector(`#${field}`);
+            if (!self.validateFields(input)) {
+                error++;
             }
-        })
-        if(error==0){
-            //do login api here
-            localStorage.setItem('auth','mpano');
-            this.form.submit();
+        });
+
+        if (error === 0) {
+            const usernameInput = document.querySelector("#username");
+            if (usernameInput.value.trim() === 'mpano') {
+                // Perform login API here
+                localStorage.setItem('auth', 'mpano');
+                this.form.submit();
+            } else {
+                // Username is not 'mpano', show an error
+                const usernameField = this.form.querySelector("#username");
+                this.setStatus(
+                    usernameField,
+                    'Invalid user',
+                    'error'
+                );
+            }
         }
-    })
+    });
 }
 
 validateFields(field) {
