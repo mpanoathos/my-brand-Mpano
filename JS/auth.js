@@ -1,3 +1,4 @@
+//auth.js
 class Auth {
     constructor() {
         // Check if user is authenticated
@@ -8,7 +9,7 @@ class Auth {
         } else {
             // Check if the user is trying to access the login or signup page
             const currentPage = window.location.pathname;
-            if (currentPage === 'login.html' || currentPage === 'signup.html') {
+            if (currentPage === '/login.html' || currentPage === '/signup.html') {
                 // Redirect to dashboard if already authenticated
                 window.location.replace('dashboard.html');
             } else {
@@ -19,12 +20,9 @@ class Auth {
     }
 
     isAuthenticated(auth) {
-        // Implement proper authentication logic (e.g., check if the token is valid)
-        if (auth === 'mpano') {
-            return true;
-        } else {
-            return false;
-        }
+        // Implement proper authentication logic (e.g., check if the email is valid)
+        const allowedEmail = 'mpano@gmail.com';
+        return auth === allowedEmail;
     }
 
     logOut() {
@@ -33,4 +31,3 @@ class Auth {
         window.location.replace('login.html'); 
     }
 }
-

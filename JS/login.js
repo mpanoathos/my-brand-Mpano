@@ -1,45 +1,41 @@
-
+// login.js
 const auth = new Auth();
 
- class Login{
-constructor(form,fields){
-    this.form=form;
-    this.fields=fields;
+class Login {
+  constructor(form, fields) {
+    this.form = form;
+    this.fields = fields;
     this.validateOnSubmit();
-}
-validateOnSubmit() {
+  }
+
+  validateOnSubmit() {
     let self = this;
 
     this.form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let error = 0;
+      e.preventDefault();
+      let error = 0;
 
-        self.fields.forEach((field) => {
-            const input = document.querySelector(`#${field}`);
-            if (!self.validateFields(input)) {
-                error++;
-            }
-        });
-
-        if (error === 0) {
-            const usernameInput = document.querySelector("#username");
-            if (usernameInput.value.trim() === 'mpano') {
-                // Perform login API here
-                localStorage.setItem('auth', 'mpano');
-                this.form.submit();
-            } else {
-                // Username is not 'mpano', show an error
-                const usernameField = this.form.querySelector("#username");
-                this.setStatus(
-                    usernameField,
-                    'Invalid user',
-                    'error'
-                );
-            }
+      self.fields.forEach((field) => {
+        const input = document.querySelector(`#${field}`);
+        if (!self.validateFields(input)) {
+          error++;
         }
-    });
-}
+      });
 
+      if (error === 0) {
+        const emailInput = document.querySelector("#email"); // Change here from #username to #email
+        if (self.validateEmail(emailInput.value.trim())) { // Change the sample email
+          // Perform login API here
+          localStorage.setItem('auth','mpano@gmail.com')
+          this.form.submit();
+        } else {
+          // Email is not 'mpano@example.com', show an error
+          const emailField = this.form.querySelector("#email");
+          this.setStatus(emailField,'Invalid email','error');
+        }
+      }
+    });
+  }
 validateFields(field) {
     if (field.value.trim() === '') {
         this.setStatus(
@@ -70,6 +66,10 @@ validateFields(field) {
         }
     }
 }
+validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 setStatus(field,message,status){
      const errorMessage=field.parentElement.querySelector(".error-message");
      if(status=='success'){
@@ -86,9 +86,9 @@ setStatus(field,message,status){
 }
 
 }
- 
-const form=document.querySelector(".loginForm")
-if (form){
-    const fields=['username','password'];
-    const validator=new Login(form,fields)
+// main.js (or any other entry point for your application)
+const form = document.querySelector(".loginForm");
+if (form) {
+  const fields = ['email', 'password']; // Update the field name here
+  const validator = new Login(form, fields);
 }
