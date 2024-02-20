@@ -1,3 +1,5 @@
+const auth = new Auth();
+
 document.addEventListener("DOMContentLoaded", function () {
 const navbar = document.querySelector('nav');
 const hamburgerMenu = document.getElementById('hamburger-menu');
