@@ -1,9 +1,5 @@
 const auth = new Auth();
 
-document.querySelector('.logout').addEventListener('click', (e) => {
-    auth.logOut();
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const hamburgerMenu = document.getElementById("hamburger-menu");
 
