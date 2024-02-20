@@ -25,15 +25,19 @@ class Login {
       if (error === 0) {
         const emailInput = document.querySelector("#email"); // Change here from #username to #email
         if (self.validateEmail(emailInput.value.trim())) { // Change the sample email
-          // Perform login API here
-          localStorage.setItem('auth','mpano@gmail.com')
+          const authenticatedEmail='mpano@gmail.com'
+          if(emailInput.value.trim()===authenticatedEmail){
+          localStorage.setItem('auth',authenticatedEmail)
           this.form.submit();
         } else {
           // Email is not 'mpano@example.com', show an error
           const emailField = this.form.querySelector("#email");
           this.setStatus(emailField,'Invalid email','error');
         }
+      }else{
+      this.setStatus(emailField, 'Invalid email format', 'error')
       }
+    }
     });
   }
 validateFields(field) {
