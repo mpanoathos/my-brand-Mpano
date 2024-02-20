@@ -1,3 +1,9 @@
+const auth = new Auth();
+
+document.querySelector('.logout').addEventListener('click', (e) => {
+    auth.logOut();
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const blogPostsContainer = document.getElementById('blogs');
     let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];

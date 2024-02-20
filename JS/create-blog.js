@@ -1,3 +1,9 @@
+const auth = new Auth();
+
+document.querySelector('.logout').addEventListener('click', (e) => {
+    auth.logOut();
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     // Retrieve URL parameters
     const urlParams = new URLSearchParams(window.location.search);
