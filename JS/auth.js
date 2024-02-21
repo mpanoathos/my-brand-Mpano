@@ -2,15 +2,16 @@ class Auth {
     constructor() {
         // Check if user is authenticated
         const auth = localStorage.getItem('auth');
+        const currentPage = window.location.pathname;
+
         if (!this.isAuthenticated(auth)) {
             // Redirect to login page if not authenticated
-            this.redirectTo('login.html');
+            if (currentPage !== '/login.html' && currentPage !== '/signup.html') {
+                this.redirectTo('login.html');
+            }
         } else {
-            // Check if the user is trying to access the login or signup page
-            const currentPage = window.location.pathname;
-            console.log(currentPage)
+            // Redirect to dashboard if already authenticated and trying to access login or signup
             if (currentPage === '/login.html' || currentPage === '/signup.html') {
-                // Redirect to dashboard if already authenticated
                 this.redirectTo('dashboard.html');
             } else {
                 // Display the body if authenticated and not on login/signup pages
