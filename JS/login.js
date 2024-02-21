@@ -34,7 +34,8 @@ class Login {
           const emailField = this.form.querySelector("#email");
           this.setStatus(emailField,'Invalid email','error');
         }
-      }else{
+      }
+      else{
       this.setStatus(emailField, 'Invalid email format', 'error')
       }
     }

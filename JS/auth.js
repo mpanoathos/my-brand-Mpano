@@ -11,7 +11,7 @@ class Auth {
             }
         } else {
             // Redirect to dashboard if already authenticated and trying to access login or signup
-            if (currentPage === '/login.html' || currentPage === '/signup.html') {
+            if (currentPage == '/login.html' || currentPage == '/signup.html') {
                 this.redirectTo('dashboard.html');
             } else {
                 // Display the body if authenticated and not on login/signup pages
