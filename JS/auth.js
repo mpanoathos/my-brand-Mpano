@@ -8,13 +8,13 @@ class Auth {
         } else {
             // Check if the user is trying to access the login or signup page
             const currentPage = window.location.pathname;
-            if (currentPage.includes('/login') || currentPage.includes('/signup.html')) {
+            if (currentPage.includes('/login') || currentPage.includes('/signup')) {
                 // Redirect to dashboard if already authenticated
                 window.location.replace('dashboard.html');
-              } else {
+            } else {
                 // Display the body if authenticated and not on login/signup pages
                 document.querySelector('body').style.display = 'block';
-              }              
+            }
         }
     }
 
