@@ -7,7 +7,7 @@ class Auth {
             window.location.replace('login.html');
         } else {
             // Check if the user is trying to access the login or signup page
-            const currentPage = window.location.pathname;
+            const currentPage = window.location.href;
             if (currentPage.includes('/login') | currentPage.includes('/signup')) {
                 // Redirect to dashboard if already authenticated
                 window.location.replace('dashboard.html');
