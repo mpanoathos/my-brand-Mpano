@@ -8,7 +8,7 @@ class Auth {
         } else {
             // Check if the user is trying to access the login or signup page
             const currentPage = window.location.pathname;
-            if (currentPage == '/login.html' || currentPage == '/signup.html') {
+            if (currentPage == 'https://mpanoathos.github.io/my-brand-Mpano/login.html' || currentPage == 'https://mpanoathos.github.io/my-brand-Mpano/signup.html/') {
                 // Redirect to dashboard if already authenticated
                 window.location.replace('dashboard.html');
             } else {
