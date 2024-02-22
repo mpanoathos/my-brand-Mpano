@@ -49,13 +49,26 @@ nav a{
 .blog2,.blog3{
     margin-top: 20px;
 }
+.buttons{
+    margin: auto;
+}
 .delete-button,.update-button{
-    display: block;
+    display: inline-block;
     cursor: pointer;
-    margin-top: 5px;
+    margin: 5px 15px;
     padding: 10px;
-    background-color:rgb(253, 197, 94);
     border: none;
+    width: 20px;
+    height: 20px;
+
+}
+.delete-button{
+    background: url('/images/delete.png') no-repeat center center;
+    background-size: contain;
+}
+.update-button{
+    background:url('/images/edit.png') no-repeat center center;
+    background-size: contain;
 }
 header{
     text-align: center;

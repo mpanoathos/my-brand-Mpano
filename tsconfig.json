@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "esnext", // Output ESNext targets for modern browsers
+      "lib": ["dom", "dom.iterable", "esnext"], // Include DOM and ESNext libraries
+      "allowJs": true, // Allow compiling existing JavaScript files
+      "skipLibCheck": true, // Don't check types of included libraries
+      "esModuleInterop": true, // Allow using CommonJS imports/exports with ES modules
+      "forceConsistentCasingInFileNames": true // Enforce consistent file naming
+    },
+    "include": ["JS/**/*", "eslintrc.js"], // Include all files in the "src" directory
+    "exclude": ["node_modules", "dist"] // Exclude these directories
+  }

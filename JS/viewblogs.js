@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayBlogPosts() {
         blogPosts.forEach((post, index) => {
             const postElement = document.createElement('div');
-            postElement.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>
-                                     <button class="delete-button" data-index="${index}">Delete</button>
-                                     <button class="update-button" data-index="${index}">Update</button>`
+            postElement.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p> <div class="buttons">
+                                     <button class="delete-button" data-index="${index}"></button>
+                                     <button class="update-button" data-index="${index}"></button></div>`
             postElement.style.border = "1px solid rgb(255, 187, 59)";
             postElement.style.borderRadius = "20px";
             postElement.style.margin = "20px 0px";

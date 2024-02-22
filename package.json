@@ -1,0 +1,31 @@
+{
+  "name": "my-brand-mpano",
+  "version": "1.0.0",
+  "description": "This repository has a front-end design of my potfolio",
+  "main": "index.js",
+  "dependencies": {
+    "add": "^2.0.6",
+    "esbuild": "^0.19.12",
+    "nanoid": "^3.3.7",
+    "picocolors": "^1.0.0",
+    "postcss": "^8.4.35",
+    "rollup": "^4.12.0",
+    "source-map-js": "^1.0.2",
+    "undici-types": "^5.26.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
