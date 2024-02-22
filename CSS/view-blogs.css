@@ -62,11 +62,11 @@ nav a{
     height: 20px;
 }
 .delete-button{
-    background: url('\\images\\delete.png') no-repeat center center;
+    background: url('../images/delete.png') no-repeat center center;
     background-size: contain;
 }
 .update-button{
-    background:url('\\images\\edit.png') no-repeat center center;
+    background:url('../images/edit.png') no-repeat center center;
     background-size: contain;
 }
 header{
