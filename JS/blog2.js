@@ -8,17 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorMessage = document.getElementById('error-message');
     const commenterNameInput = document.getElementById('commenterName');
     const blogContentContainer = document.querySelector('.blogs-paragraph');
-    const queryParams = new URLSearchParams(window.location.search);
-    const title = decodeURIComponent(queryParams.get('title'));
-    const content = decodeURIComponent(queryParams.get('content'));
 
-    // Display the blog post content
-    blogContentContainer.innerHTML = `<h3>${title}</h3><p>${content}</p>`
-    // Hamburger menu toggle
-    hamburgerMenu.addEventListener("click", function () {
-        navbar.classList.toggle("show-navbar");
-        hamburgerMenu.classList.toggle("active");
-    });
+     //getting blogs from local storage
+     const blogPosts=JSON.parse(localStorage.getItem('blogPosts'))
+     function displayBlogPost(){
+         if(blogPosts && blogPosts.length>0){
+             const blog2=blogPosts[1];
+             blogContentContainer.innerHTML=`<h3>${blog2.title}</h3><p>${blog2.content}</p>`
+         }
+         else{
+             console.log('No blog present')
+         }
+     }
+     displayBlogPost();
 
     // Hamburger menu toggle
     hamburgerMenu.addEventListener("click", function () {
