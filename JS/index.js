@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async () => {
     // Event listener for hamburger menu
+
     const navbar = document.querySelector("nav");
     const hamburgerMenu = document.getElementById("hamburger-menu");
     hamburgerMenu.addEventListener("click", toggleNavbar);
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.forms['form'];
     const name = form['name'];
     const email = form['email'];
+    const message = form['Message']; // Corrected the capitalization of 'Message'
     const name_error = document.querySelector('.name-error');
     const email_error = document.querySelector('.email-error');
     name.addEventListener('input', nameVerify);
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         link.click();
         document.body.removeChild(link);
     }
-
     function nameVerify() {
         name.style.border = '';
         name_error.style.display = 'none';
@@ -65,27 +66,34 @@ document.addEventListener("DOMContentLoaded", function () {
         return true;
     }
 
-    function submitForm(e) {
+    async function submitForm(e) {
+        e.preventDefault(); // Prevent form submission
+
         if (!validated()) {
-            e.preventDefault();
-        } else {
-            storeFormData();
-            redirectToCommentsPage();
+            return;
         }
-    }
 
-    function storeFormData() {
-        var formData = {
-            name: document.forms["form"]["name"].value,
-            email: document.forms["form"]["email"].value,
-            message: document.forms["form"]["Message"].value
-        };
-        var jsonData = JSON.stringify(formData);
-        localStorage.setItem('formData', jsonData);
-    }
+        try {
+            const response = await fetch('http://127.0.0.1:5000/messages', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: name.value,
+                    email: email.value,
+                    message: message.value
+                })
+            });
 
-    function redirectToCommentsPage() {
-        window.location.href = 'comments.html';
-        return false; // Prevent the form from submitting through the traditional way
+            if (response.ok) {
+                // Redirect to the comments page
+                window.location.href = 'comments.html';
+            } else {
+                console.error('Failed to send message:', response.status);
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+        }
     }
 });

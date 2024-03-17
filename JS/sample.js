@@ -74,7 +74,7 @@ function renderBlogs(posts) {
         
         // Create anchor element for the blog post with href linking to the details page
         const postLink = document.createElement("a");
-        postLink.href = `post.html?postId=${post._id}`; // Assuming each blog post has an 'id' property
+        postLink.href = `post.html?id=${post.id}`; // Assuming each blog post has an 'id' property
         postLink.textContent = post.title; // Assuming each blog post has a 'title' property
         postLink.classList.add('post-link'); // Add a class for styling
         
@@ -82,48 +82,17 @@ function renderBlogs(posts) {
         const deleteLink = document.createElement("a");
         deleteLink.href = `#`; // Set the href attribute to '#' for now
         deleteLink.textContent = 'Delete';
-        deleteLink.classList.add('btn'); // Add a class for styling
-        deleteLink.addEventListener('click', async function(event) {
-            event.preventDefault();
-            // Call a function to handle delete action for the specific blog post
-            try {
-                const response = await fetch(`http://127.0.0.1:5000/blogs/post/${post._id}`, {
-                    method: 'DELETE',
-                });
-                console.log(post);
-                if (!response.ok) {
-                    throw new Error('Failed to delete blog post');
-                }
-                // Remove the blog post element from the UI
-                postElement.remove();
-            } catch (error) {
-                console.error(error);
-            }
-        });
+        deleteLink.classList.add('btn', 'delete-btn'); // Add classes for styling
+        deleteLink.dataset.postId = post.id; // Store post id as a data attribute
+        // Add event listener for delete button
+        deleteLink.addEventListener('click', deleteBlog);
+
         // Create anchor element for editing the blog post
         const editLink = document.createElement("a");
-        editLink.href = `post.html?postId=${post._id}`; // Assuming each blog post has an 'id' property
+        editLink.href = `create-blog.html?id=${post.id}`; // Assuming each blog post has an 'id' property
         editLink.textContent = 'Edit';
-        editLink.classList.add('btn'); // Add a class for styling
-        editLink.addEventListener('click', async function(event) {
-        event.preventDefault();
-        try {
-        // Fetch the current data of the blog post before editing
-        const result = await fetch(`http://127.0.0.1:5000/blogs/post/${post._id}`,{
-            method: 'PUT',
-        });
-        console.log(post)
-        if (!result.ok) {
-            throw new Error('Failed to fetch blog post for editing');
-        }
-        const postData = await result.json();
-        // Now postData contains the current data of the blog post
-        // You can navigate to the edit page and pass the post data
-        window.location.href = `create-blog.html?id=${post._id}&title=${encodeURIComponent(postData.title)}&body=${encodeURIComponent(postData.body)}`;
-    } catch (error) {
-        console.error(error);
-    }
-});
+        editLink.classList.add('btn', 'edit-btn'); // Add classes for styling
+        
         // Append the anchor elements to the list item
         postElement.appendChild(postLink);
         postElement.appendChild(deleteLink);
@@ -132,5 +101,22 @@ function renderBlogs(posts) {
         // Append the list item to the blog container
         blogContainer.appendChild(postElement);
     });
+}
+
+async function deleteBlog(event) {
+    event.preventDefault();
+    const postId = event.target.dataset.postId;
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/blogs/post/${postId}`, {
+            method: 'DELETE',
+        });
+        if (!response.ok) {
+            throw new Error('Failed to delete blog post');
+        }
+        // Remove the blog post element from the UI
+        event.target.parentNode.remove();
+    } catch (error) {
+        console.error(error);
+    }
 }
 

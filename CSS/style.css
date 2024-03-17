@@ -57,14 +57,14 @@ nav a{
     height: 350px;
     border-radius:30px;
     position: absolute;
-    right: 780px;
+    right: 1030px;
     top:130px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .home-presentation{
     position: absolute;
     top:210px;
-    left:550px;
+    left:650px;
     text-align: center;  
 }
 .first-paragraph .name{
@@ -74,7 +74,7 @@ nav a{
 }
 #home button{
     position: absolute;
-    right:350px;
+    right:480px;
     top:360px;
     padding:15px;
     background-color: #757069;
@@ -142,7 +142,7 @@ nav a{
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
     background-color:#BED2DD;
     padding:30px;
-    margin-left: 420px;
+    margin-left: 550px;
     position:relative;
     top:20px;
     text-align: center;
@@ -163,7 +163,7 @@ nav a{
     display: flex;
     align-items: center;
     gap:4rem;
-    margin-left: 130px;
+    margin-left: 250px;
 }
 .my-work .work-box{
     position: relative;
@@ -232,7 +232,7 @@ nav a{
     background-color: #BED2DD;
     display:inline-block;
     flex-direction: row;
-    margin-left: 230px;
+    margin-left: 330px;
     margin-top:30px;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;

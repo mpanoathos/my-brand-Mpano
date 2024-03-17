@@ -1,6 +1,5 @@
-const auth = new Auth();
-
-document.addEventListener("DOMContentLoaded", function () {
+const auth=new Auth()
+document.addEventListener("DOMContentLoaded", async ()=> {
     // Retrieve URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const titleInput = document.getElementById('blogTitle');
@@ -12,6 +11,49 @@ document.addEventListener("DOMContentLoaded", function () {
         contentInput.value = decodeURIComponent(urlParams.get('content'));
     }
 
+    // Add event listener to the submit button
+    document.getElementById('submitBtn').addEventListener('click', addOrUpdateBlogPost);
+
+    async function addOrUpdateBlogPost() {
+    const title = titleInput.value;
+    const content = contentInput.value;
+    const urlParams = new URLSearchParams(window.location.search);
+    const updatingPost = urlParams.has('id');
+
+    if (title && content) {
+        try {
+            const url = updatingPost ? `http://127.0.0.1:5000/blogs/post/${urlParams.get('id')}` : 'http://127.0.0.1:5000/blogs/post';
+            const method = updatingPost ? 'PUT' : 'POST';
+            
+            const response = await fetch(url, {
+                method,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title,
+                    body: content
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to post blog');
+            }
+
+            // Clear input fields
+            titleInput.value = '';
+            contentInput.value = '';
+
+            // Redirect to another page (replace 'blogs.html' with your desired page)
+            window.location.href = 'blogs.html';
+        } catch (error) {
+            console.error('Error posting blog:', error);
+        }
+    }
+}
+
+    
+
     const navbar = document.querySelector("nav");
     const hamburgerMenu = document.getElementById("hamburger-menu");
 
@@ -22,46 +64,4 @@ document.addEventListener("DOMContentLoaded", function () {
         // Toggle the appearance of the hamburger menu icon
         hamburgerMenu.classList.toggle("active");
     });
-
-    // Retrieve existing blog posts from local storage or initialize an empty array
-    let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-
-    // Function to add a new blog post or update an existing one
-    function addOrUpdateBlogPost() {
-        const title = titleInput.value;
-        const content = contentInput.value;
-
-        if (title && content) {
-            // Check if updating an existing post by checking for URL parameters
-            const updatingPost = urlParams.has('title') && urlParams.has('content');
-
-            if (updatingPost) {
-                // If updating, find the index of the post to update
-                const indexToUpdate = blogPosts.findIndex(post =>
-                    post.title === decodeURIComponent(urlParams.get('title')) &&
-                    post.content === decodeURIComponent(urlParams.get('content'))
-                );
-
-                // Update the existing post
-                if (indexToUpdate !== -1) {
-                    blogPosts[indexToUpdate] = { title, content };
-                }
-            } else {
-                // If creating a new post, add it to the array
-                blogPosts.push({ title, content });
-            }
-
-            // Save the updated array to local storage
-            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
-
-            // Clear input fields
-            titleInput.value = '';
-            contentInput.value = '';
-
-            // Redirect to another page (replace 'another-page.html' with your desired page)
-            window.location.href = 'view-blogs.html';
-        }
-    }
-
-    document.getElementById('submitBtn').addEventListener('click', addOrUpdateBlogPost);
 });
