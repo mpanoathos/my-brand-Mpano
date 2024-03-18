@@ -106,24 +106,10 @@ function renderBlogs(posts) {
         editLink.textContent = 'Edit';
         editLink.classList.add('btn'); // Add a class for styling
         editLink.addEventListener('click', async function(event) {
-        event.preventDefault();
-        try {
-        // Fetch the current data of the blog post before editing
-        const result = await fetch(`http://127.0.0.1:5000/blogs/post/${post._id}`,{
-            method: 'PUT',
+            event.preventDefault();
+            window.location.href = `create-blog.html?postId=${post._id}&title=${encodeURIComponent(post.title)}&content=${encodeURIComponent(post.body)}`;          
         });
-        console.log(post)
-        if (!result.ok) {
-            throw new Error('Failed to fetch blog post for editing');
-        }
-        const postData = await result.json();
-        // Now postData contains the current data of the blog post
-        // You can navigate to the edit page and pass the post data
-        window.location.href = `create-blog.html?id=${post._id}&title=${encodeURIComponent(postData.title)}&body=${encodeURIComponent(postData.body)}`;
-    } catch (error) {
-        console.error(error);
-    }
-});
+        
         // Append the anchor elements to the list item
         postElement.appendChild(postLink);
         postElement.appendChild(deleteLink);

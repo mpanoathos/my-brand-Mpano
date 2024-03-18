@@ -115,7 +115,7 @@ class Login {
       if (response.ok) {
         // Save token in local storage
         localStorage.setItem('authToken', responseData.token);
-  
+        localStorage.setItem('isAdmin', responseData.isAdmin);
         // Log isAdmin value to debug
         console.log("Is Admin:", responseData.isAdmin);
   

@@ -3,3 +3,37 @@
     height: 20px;
     margin-left: 30px;
 }
+.leave-comment{
+    text-align: center;
+    margin: auto;
+}
+.leave-comment #commeterName{
+    width: 200px;
+    height: 50px;
+}
+.leave-comment textarea{
+    outline: none;
+    width: 200px;
+    height: 50px;
+    margin-top:5px ;
+}
+.leave-comment button{
+    padding: 10px;
+    background-color: rgb(253, 197, 94);
+    border: none;
+    cursor:pointer;
+}
+.leave-comment p{
+    color: red;
+    font-size: small;
+    display: none;
+}
+.display-message{
+    border: 1px solid rgb(253, 197, 94);
+    padding: 20px;
+    width:1000px;
+    position: relative;
+    right:0px;
+    top:50px;
+    border-radius: 20px;
+}
